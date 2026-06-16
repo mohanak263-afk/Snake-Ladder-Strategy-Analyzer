@@ -1,0 +1,219 @@
+body{
+    margin:0;
+    padding:0;
+    font-family:Arial,sans-serif;
+    background:#f4f6f9;
+    text-align:center;
+}
+
+.container{
+    width:95%;
+    max-width:1200px;
+    margin:auto;
+    padding:20px;
+}
+
+h1{
+    color:#222;
+    margin-bottom:20px;
+}
+
+.players{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+
+.player-card{
+    background:white;
+    padding:15px;
+    width:220px;
+    border-radius:12px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
+}
+
+.player-card h2{
+    margin:0;
+}
+
+.player-card h3{
+    color:#2563eb;
+    font-size:28px;
+}
+
+#turn{
+    color:#111827;
+    margin:15px 0;
+}
+
+#dice{
+    color:#16a34a;
+    margin-top:15px;
+}
+
+#winner{
+    color:#dc2626;
+    font-size:28px;
+    margin-top:15px;
+}
+
+#rollBtn,
+#resetBtn,
+#leaderboardBtn{
+    border:none;
+    border-radius:8px;
+    padding:12px 25px;
+    font-size:18px;
+    cursor:pointer;
+    margin:10px;
+}
+
+#rollBtn{
+    background:#2563eb;
+    color:white;
+}
+
+#rollBtn:hover{
+    background:#1d4ed8;
+}
+
+#resetBtn{
+    background:#f59e0b;
+    color:white;
+}
+
+#resetBtn:hover{
+    background:#d97706;
+}
+
+#leaderboardBtn{
+    background:#16a34a;
+    color:white;
+}
+
+#leaderboardBtn:hover{
+    background:#15803d;
+}
+
+#rollBtn:disabled{
+    background:gray;
+    cursor:not-allowed;
+}
+
+#messageBox{
+    width:80%;
+    max-width:900px;
+    margin:20px auto;
+    padding:15px;
+    background:white;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
+    font-size:18px;
+    font-weight:bold;
+    min-height:40px;
+}
+
+#historyBox{
+    width:80%;
+    max-width:900px;
+    margin:20px auto;
+    padding:15px;
+    background:white;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
+    text-align:left;
+    max-height:250px;
+    overflow-y:auto;
+}
+
+#historyBox h3{
+    margin-top:0;
+    text-align:center;
+    color:#111827;
+}
+
+#historyList{
+    list-style-type:none;
+    padding:0;
+    margin:0;
+}
+
+#historyList li{
+    padding:10px;
+    margin-bottom:8px;
+    background:#f3f4f6;
+    border-left:5px solid #2563eb;
+    border-radius:5px;
+    font-size:15px;
+    word-wrap:break-word;
+}
+
+.board-container{
+    width:800px;
+    height:800px;
+    position:relative;
+    margin:30px auto;
+}
+
+#boardImage{
+    width:100%;
+    height:100%;
+    border-radius:10px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.2);
+}
+
+.token{
+    position:absolute;
+    font-size:30px;
+    z-index:100;
+    transition:all 0.6s ease;
+}
+
+.red{
+    left:10px;
+    bottom:10px;
+}
+
+.blue{
+    left:40px;
+    bottom:10px;
+}
+
+table{
+    border-collapse:collapse;
+}
+
+table tr:nth-child(even){
+    background:#f3f4f6;
+}
+
+table tr:hover{
+    background:#e5e7eb;
+}
+
+th,
+td{
+    border:1px solid #d1d5db;
+}
+
+@media(max-width:900px){
+
+    .board-container{
+        width:95vw;
+        height:95vw;
+    }
+
+    .player-card{
+        width:180px;
+    }
+
+    #messageBox{
+        width:95%;
+    }
+
+    #historyBox{
+        width:95%;
+    }
+}

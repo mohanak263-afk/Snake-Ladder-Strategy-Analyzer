@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Leaderboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🏆 Leaderboard 🏆</h1>
+
+        <table
+            style="
+            margin:auto;
+            background:white;
+            border-collapse:collapse;
+            width:60%;
+            box-shadow:0 4px 10px rgba(0,0,0,0.15);
+        ">
+
+            <tr
+                style="
+                background:#2563eb;
+                color:white;
+            ">
+
+                <th style="padding:12px;">
+                    Rank
+                </th>
+
+                <th style="padding:12px;">
+                    Player
+                </th>
+
+                <th style="padding:12px;">
+                    Wins
+                </th>
+
+            </tr>
+
+            {% for row in rows %}
+
+            <tr>
+
+                <td style="padding:10px;">
+                    {{ loop.index }}
+                </td>
+
+                <td style="padding:10px;">
+                    {{ row[0] }}
+                </td>
+
+                <td style="padding:10px;">
+                    {{ row[1] }}
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+        </table>
+
+        <br>
+
+        <a href="/game">
+
+            <button id="rollBtn">
+                🎮 Back To Game
+            </button>
+
+        </a>
+
+    </div>
+
+</body>
+
+</html>

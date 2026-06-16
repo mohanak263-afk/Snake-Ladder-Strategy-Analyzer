@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Snake & Ladder Pro</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🐍 Snake & Ladder Pro 🪜</h1>
+
+        <div class="players">
+
+            <div class="player-card">
+
+                <h2>Player 1</h2>
+
+                <h3 id="player1">
+                    {{ player1 }}
+                </h3>
+
+            </div>
+
+            <div class="player-card">
+
+                <h2>Player 2</h2>
+
+                <h3 id="player2">
+                    {{ player2 }}
+                </h3>
+
+            </div>
+
+        </div>
+
+        <h2 id="turn">
+            Player {{ current_player }} Turn
+        </h2>
+
+        <div class="player-card"
+             style="margin:auto; margin-bottom:20px; width:500px;">
+
+            <h3>
+                BFS Analysis
+            </h3>
+
+            <p>
+                Minimum Moves To Win:
+                <strong id="bfsMoves">
+                    {{ bfs_moves }}
+                </strong>
+            </p>
+
+            <p>
+                <strong>
+                    BFS Shortest Path
+                </strong>
+            </p>
+
+            <pre id="bfsPath">
+                {{ bfs_path }}
+            </pre>
+
+        </div>
+
+        <button id="rollBtn">
+            🎲 Roll Dice
+        </button>
+
+        <button id="resetBtn">
+            🔄 Reset Game
+        </button>
+
+        <a href="/leaderboard">
+
+            <button id="leaderboardBtn">
+                🏆 Leaderboard
+            </button>
+
+        </a>
+
+        <h2 id="dice">
+            Dice: -
+        </h2>
+
+        <div id="messageBox">
+            Welcome to Snake & Ladder!
+        </div>
+
+        <div id="historyBox">
+
+            <h3>
+                Move History
+            </h3>
+
+            <ul id="historyList">
+
+            </ul>
+
+        </div>
+
+        <h2 id="winner"></h2>
+
+        <div class="board-container">
+
+            <img src="{{ url_for('static',
+                     filename='board.png') }}"
+                 id="boardImage">
+
+            <div id="player1Token"
+                 class="token red">
+                🔴
+            </div>
+
+            <div id="player2Token"
+                 class="token blue">
+                🔵
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static',
+                filename='script.js') }}">
+    </script>
+
+</body>
+
+</html>
